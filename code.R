@@ -1,7 +1,3 @@
-library(rvest)
-
-request <- c("MIRT302435")
-
 seq <- function(mima){
   url <- paste0("http://mirtarbase.mbc.nctu.edu.tw/php/detail.php?mirtid=", mima,"#target")
   
@@ -17,9 +13,7 @@ seq <- function(mima){
   confirm <- ifelse(length(confirm)==0,"NA",confirm)
   tmp <- data.frame(predict=predict,confirm=confirm,mir=mima)
   
-
+  
 }
 
 test <- lapply(request,seq)
-result <- do.call(rbind,test)
-write.table(result,"result.txt",row.names = F,quote=F)
