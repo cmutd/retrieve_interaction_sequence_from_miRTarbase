@@ -34,4 +34,4 @@ seq <- function(mima){
 
 test <- lapply(request,seq)
 result <- do.call(rbind,test)
-write.table(result,"confirm.txt",row.names = F,quote=F)
+write.table(result,"confirm.txt",row.names = F,quote=F,sep='\t')
